@@ -17,7 +17,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
 app.use(cors({
-    origin: ["http://localhost:3001", "http://localhost:3000","blumdata-project.vercel.app"],
+    origin: ["http://localhost:3001", "http://localhost:3000", "blumdata-project.vercel.app","https://blumdata-project.vercel.app"],
     credentials: true
 }))
 
@@ -30,17 +30,18 @@ const store = new MongoDBStore({
     collection: "session-data"
 });
 
+app.set('trust proxy', 1);
 
 app.use(session({
     secret: process.env.SecretKey,
     saveUninitialized: false,
     store: store,
     resave: false,
-    // cookie: {
-    //     httpOnly: true,
-    //     secure: true,
-    //     sameSite: 'none'
-    // }
+    cookie: {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none'
+    }
 }))
 
 
