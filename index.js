@@ -7,7 +7,7 @@ const cors = require('cors');
 const registerroute = require('./route/RegisterRoute');
 const requestQuoteUser = require('./route/RequestQuoteUserModel');
 const manageproductadminRoute = require('./route/ManageProductAdmin');
-const path=require('path');
+const path = require('path');
 const router = require('./route/RequestQuoteUserModel');
 const app = express()
 
@@ -17,7 +17,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
 app.use(cors({
-    origin: ["http://localhost:3001", "http://localhost:3000", "blumdata-project.vercel.app","https://blumdata-project.vercel.app"],
+    origin: ["http://localhost:3001", "http://localhost:3000", "blumdata-project.vercel.app", "https://blumdata-project.vercel.app"],
     credentials: true
 }))
 
