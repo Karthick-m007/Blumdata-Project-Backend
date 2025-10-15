@@ -17,7 +17,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
 app.use(cors({
-    origin: ["http://localhost:3001", "http://localhost:3000", "blumdata-project-frontend.vercel.app"],
+    origin: ["http://localhost:3001","https://blumdata-project-frontend.vercel.app","http://localhost:3000", "blumdata-project-frontend.vercel.app"],
     credentials: true
 }))
 
